@@ -51,7 +51,7 @@
       }
     ],
     "imageResize": true,
-    "uniqCompNum": 12,
+    "uniqCompNum": 13,
     "versionPublish": "4.12.3",
     "screenshot": "screenshot.png"
   },
@@ -556,6 +556,50 @@
           "_styles": {
             "padding-top": "(@paddingTop * 15px)",
             "padding-bottom": "(@paddingBottom * 15px)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            "img": {
+              "object-fit": "cover"
+            },
+            "input, textarea, select": {
+              "color": "@labelsColor !important",
+              "border-color": "@borderColor",
+              "&:hover, &:focus": {
+                "border-color": "@primaryColor"
+              },
+              "background": "@inputColor"
+            },
+            "input::-webkit-input-placeholder": {
+              "color": "fade(@labelsColor, 50%)"
+            },
+            "input::-moz-placeholder": {
+              "color": "fade(@labelsColor, 50%)"
+            },
+            "textarea::-webkit-input-placeholder": {
+              "color": "fade(@labelsColor, 50%)"
+            },
+            "textarea::-moz-placeholder": {
+              "color": "fade(@labelsColor, 50%)"
+            }
+          },
+          "_name": "contacts6",
+          "_customHTML": "<section class=\"contacts6\" group=\"Contacts\" plugins=\"amp-main,amp-form,amp-mustache\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"4\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"4\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\">\n\n        <input type=\"checkbox\" title=\"Show Image\" name=\"showImg\" checked=\"\">\n\n        <input type=\"color\" title=\"Fields Color\" name=\"inputColor\" value=\"#ffffff\">\n        <input type=\"color\" title=\"Border Color\" name=\"borderColor\" value=\"#767676\">\n        <input type=\"color\" title=\"Form Text Color\" name=\"labelsColor\" value=\"#000000\">\n\n        <input type=\"checkbox\" title=\"Map on Left/Right\" name=\"reverseContent\" condition=\"showImg\">\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background2.jpg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#ffffff\" selected=\"\">\n        </fieldset>\n        <input type=\"map\" title=\"Map\" name=\"googleMap\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"container\">\n        <h2 mbr-if=\"showTitle\" class=\"align-center mbr-fonts-style mbr-section-title\" mbr-theme-style=\"display-2\">\n            Contact Us\n        </h2>\n        <h3 mbr-if=\"showSubtitle\" class=\"mbr-section-subtitle align-center mbr-light mbr-fonts-style mbr-pt-1 mbr-pb-3\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-section-subtitle\">\n            Find Us Or Contact Us\n        </h3>\n\n        <div class=\"mbr-row mbr-jc-c main-row\" mbr-class=\"{'mbr-pt-4': showSubtitle || showTitle, 'mbr-row-reverse': reverseContent}\">\n            <div class=\"mbr-col-md-12 mbr-col-sm-12 mbr-col-lg-6 img-content md-pb\" mbr-if=\"showImg\">\n                <amp-img src=\"@PROJECT_PATH@/assets/images/ay-1076x1076.jpeg\" alt=\"Mobirise\" width=\"538.2007822685789\" height=\"480\" layout=\"responsive\" class=\"mobirise-loader\">\n                    <div placeholder=\"\" class=\"placeholder\"></div>\n                    <img class=\"mbr-temp\" src=\"@PROJECT_PATH@/assets/images/ay-1076x1076.jpeg\" alt=\"Mobirise\" title=\"\">\n                </amp-img>\n            </div>\n\n\n            <div class=\"mbr-col-md-12 mbr-col-sm-12 form-content\" mbr-class=\"{'mbr-col-lg-12':!showImg, 'mbr-col-lg-6': showImg}\">\n                <div class=\"form-wrap\" mbr-form=\"\">\n                  <form class=\"mbr-form\" action=\"techwild2011@gmail.com\" method=\"post\" name=\"Ay_lil' King\" target=\"_top\" novalidate=\"\">\n                      <div class=\"mbr-form-row\">\n                        <div submit-success=\"\" class=\"mbr-col-sm-12 mbr-col-md-12\">\n                            <template data-form-alert=\"\" type=\"amp-mustache\">Successful!</template>\n                        </div>\n                        <div submit-error=\"\" class=\"mbr-col-sm-12 mbr-col-md-12\">\n                            <template data-form-alert=\"\" type=\"amp-mustache\">Successful!</template>\n                        </div>\n                      </div>\n                      <div class=\"mbr-form-row\" data-for=\"form[data][1][1]\">\n                          <div class=\"field mbr-col-sm-12 mbr-col\" data-for=\"form[data][1][1]\">\n                              <input type=\"hidden\" name=\"form[data][1][0]\" value=\"Name\">\n                              <input class=\"field-input\" type=\"text\" name=\"form[data][1][1]\" data-form-field=\"Name\" placeholder=\"Name\" required=\"\" mbr-theme-style=\"display-4\">\n                          </div>\n                          <div class=\"field mbr-col-sm-12 mbr-col\" data-for=\"form[data][2][1]\" hidden=\"hidden\">\n                              <input type=\"hidden\" name=\"form[data][2][0]\" value=\"Phone\">\n                              <input class=\"field-input\" type=\"tel\" name=\"form[data][2][1]\" data-form-field=\"Phone\" pattern=\"[0-9]{3}-[0-9]{3}-[0-9]{4}\" placeholder=\"Phone\" required=\"\" mbr-theme-style=\"display-4\" hidden=\"hidden\">\n                          </div>\n                          <div class=\"field mbr-col-sm-12 mbr-col\" data-for=\"form[data][0][1]\">\n                              <input type=\"hidden\" name=\"form[data][0][0]\" value=\"Email\">\n                              <input class=\"field-input\" type=\"email\" name=\"form[data][0][1]\" data-form-field=\"Email\" placeholder=\"Email\" required=\"\" mbr-theme-style=\"display-4\">\n                          </div>\n                          <div class=\"area field mbr-col-sm-12 mbr-col-md-12 mbr-col-lg-12\" data-for=\"form[data][3][1]\">\n                              <input type=\"hidden\" name=\"form[data][3][0]\" value=\"Message\">\n                              <textarea class=\"field-input\" name=\"form[data][3][1]\" rows=\"7\" data-form-field=\"Message\" placeholder=\"Message\" mbr-theme-style=\"display-4\"></textarea>\n                          </div>\n                          <div mbr-buttons=\"\" mbr-theme-style=\"display-4\" data-toolbar=\"-mbrLink,-mbrBtnAdd,-mbrBtnMove\" class=\"mbr-section-btn mbr-col-sm-12 mbr-col-md-12 mbr-col-lg-12 align-center\">\n                              <a type=\"submit\" class=\"btn btn-primary btn-form\">SEND FORM</a>\n                          </div>\n                      </div>\n                  </form>\n            </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "s5qgO2Ft2D",
+          "_anchor": "contacts6-c",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
             "background-color": "@bgColor",
             "img": {
               "object-fit": "cover"
@@ -584,47 +628,6 @@
           "_customHTML": "<section class=\"features10\" group=\"Features\" plugins=\"amp-main\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" value=\"6\" step=\"1\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" value=\"2\" step=\"1\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked=\"\">\n        <input type=\"checkbox\" title=\"Show Button(s)\" name=\"showButtons\">\n        <input type=\"checkbox\" title=\"Media on Left/Right\" name=\"flexDirection\" checked=\"\">\n\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n       \n    <div class=\"container\">\n        <div class=\"mbr-row mbr-jc-c\" mbr-class=\"{'mbr-row-reverse': flexDirection}\">\n            <div class=\"image-block mbr-col-sm-12 mbr-col-md-6 \">\n                <amp-img src=\"@PROJECT_PATH@/assets/images/whatsapp-image-2020-07-21-at-5.13.11-pm1-768x1024.jpeg\" layout=\"responsive\" width=\"522.1516393442622\" height=\"415\" alt=\"Mobirise\" class=\"mobirise-loader\">\n                    <div placeholder=\"\" class=\"placeholder\"></div>\n                    <img class=\"mbr-temp\" src=\"@PROJECT_PATH@/assets/images/whatsapp-image-2020-07-21-at-5.13.11-pm1-768x1024.jpeg\" alt=\"Mobirise\" title=\"\">\n                </amp-img>\n            </div>\n            <div class=\"text-block mbr-col-sm-12 mbr-col-md-6 mbr-m-auto\">\n                <h3 class=\"mbr-section-title mbr-fonts-style align-left mbr-pt-1 mbr-pb-3\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">I believe that \"Creativity knows no borders.\"</h3>\n                <p class=\"mbr-fonts-style mbr-text align-left mbr-pt-1 mbr-pb-3\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Accurate knowledge of dress and fashion history is vital to the practice and study of not only art history, but also archaeology, classics, history, literature and visual culture. Yet analyzing and understanding dress can be daunting to scholars and students who have not been trained in fashion history. Ay_lil' King is intended to demystify dress and fashion, offering the academic community and the public an easily accessible starting place for their research.<br></p>\n                <div class=\"mbr-section-btn align-left\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons=\"\" mbr-theme-style=\"display-4\">\n                    <a class=\"btn btn-sm btn-primary\" href=\"https://mobiri.se\">READ MORE</a>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
           "_cid": "s5nN9M7dJ0",
           "_anchor": "features10-9",
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
-          "_params": {}
-        },
-        {
-          "alias": false,
-          "_styles": {
-            "padding-top": "(@paddingTop * 15px)",
-            "padding-bottom": "(@paddingBottom * 15px)",
-            "& when (@bg-type = 'color')": {
-              "background-color": "@bg-value"
-            },
-            "& when (@bg-type = 'image')": {
-              "background-image": "url(@bg-value)"
-            },
-            "input, textarea, select": {
-              "color": "@labelsColor !important",
-              "border-color": "@borderColor",
-              "&:hover, &:focus": {
-                "border-color": "@primaryColor"
-              },
-              "background": "@inputColor"
-            },
-            "input::-webkit-input-placeholder": {
-              "color": "fade(@labelsColor, 50%)"
-            },
-            "input::-moz-placeholder": {
-              "color": "fade(@labelsColor, 50%)"
-            },
-            "textarea::-webkit-input-placeholder": {
-              "color": "fade(@labelsColor, 50%)"
-            },
-            "textarea::-moz-placeholder": {
-              "color": "fade(@labelsColor, 50%)"
-            }
-          },
-          "_name": "contacts2",
-          "_customHTML": "<section class=\"contacts2\" group=\"Contacts\" plugins=\"amp-main,amp-form,amp-mustache\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"6\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"6\">\n\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\">\n\n        <input type=\"color\" title=\"Fields Color\" name=\"inputColor\" value=\"#ffffff\">\n        <input type=\"color\" title=\"Border Color\" name=\"borderColor\" value=\"#767676\">\n        <input type=\"color\" title=\"Form Text Color\" name=\"labelsColor\" value=\"#000000\">\n\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background2.jpg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#ffffff\" selected>\n        </fieldset>\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"container\">\n        <h2 mbr-if=\"showTitle\" class=\"align-center mbr-fonts-style mbr-light\" mbr-theme-style=\"display-2\">Get in touch</h2>\n        <h3 mbr-if=\"showSubtitle\" class=\"mbr-section-subtitle align-center mbr-fonts-style mbr-light mbr-pb-3 mbr-pt-1\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-section-subtitle\">Subscribe to our Newsletter</h3>\n\n        <div class=\"mbr-row mbr-jc-c\" mbr-class=\"{'mbr-pt-4': showTitle || showSubtitle}\">\n            <div mbr-form class=\"mbr-col-lg-7 mbr-col-md-10 mbr-col-sm-12\">\n                <form class=\"mbr-form\" action method=\"post\" name=\"Mobirise Form\" target=\"_top\" novalidate>\n                    <div class=\"mbr-form-row\">\n                      <div submit-success class=\"mbr-col-sm-12 mbr-col-md-12\">\n                          <template data-form-alert type=\"amp-mustache\">\n                            Subscription successful!\n                          </template>\n                      </div>\n                      <div submit-error class=\"mbr-col-sm-12 mbr-col-md-12\">\n                          <template data-form-alert type=\"amp-mustache\">\n                            Subscription failed! {{error}}\n                          </template>\n                      </div>\n                    </div>\n                    <div class=\"mbr-form-row\">\n                        <div class=\"field mbr-col-sm-12 mbr-col\" data-for=\"form[data][1][1]\">\n                            <input type=\"hidden\" name=\"form[data][1][0]\" value=\"Name\">\n                            <input class=\"field-input\" type=\"text\" name=\"form[data][1][1]\" data-form-field=\"Name\" placeholder=\"Name\" required mbr-theme-style=\"display-4\">\n                        </div>\n                        <div class=\"field mbr-col-sm-12 mbr-col\" data-for=\"form[data][2][1]\">\n                            <input type=\"hidden\" name=\"form[data][2][0]\" value=\"Phone\">\n                            <input class=\"field-input\" type=\"tel\" placeholder=\"Phone\" pattern=\"[0-9]{3}-[0-9]{3}-[0-9]{4}\" data-form-field=\"Phone\" name=\"form[data][2][1]\" required mbr-theme-style=\"display-4\">\n                        </div>\n                        <div class=\"field mbr-col-sm-12 mbr-col\" data-for=\"form[data][0][1]\">\n                            <input type=\"hidden\" name=\"form[data][0][0]\" value=\"Email\">\n                            <input class=\"field-input\" type=\"email\" name=\"form[data][0][1]\" data-form-field=\"Email\" placeholder=\"Email\" required mbr-theme-style=\"display-4\">\n                        </div>\n                        <div class=\"area field mbr-col-sm-12 mbr-col-md-12 mbr-col-lg-12\" data-for=\"form[data][3][1]\">\n                            <input type=\"hidden\" name=\"form[data][3][0]\" value=\"Message\">\n                            <textarea class=\"field-input\" name=\"form[data][3][1]\" rows=\"7\" data-form-field=\"Message\" placeholder=\"Message\" mbr-theme-style=\"display-4\"></textarea>\n                        </div>\n                        <div mbr-buttons mbr-theme-style=\"display-4\" data-toolbar=\"-mbrLink,-mbrBtnAdd,-mbrBtnMove\" class=\"mbr-section-btn mbr-col-sm-12 mbr-col-md-12 mbr-col-lg-12 align-center\"><a type=\"submit\" class=\"btn btn-primary btn-form\" data-app-placeholder=\"Type Text\">SEND</a></div>\n                    </div>\n                </form>\n            </div>\n        </div>\n    </div>\n</section>",
-          "_cid": "s5nIkQBDmj",
-          "_anchor": "contacts2-5",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
